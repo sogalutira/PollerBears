@@ -4,16 +4,16 @@ const mongoose = require('mongoose');
 const nodemailer = require("nodemailer");
 const CONFIG = require('./config.json'); 
 const fs = require('fs');
-const connection = mongoose.connect(CONFIG.MONGO_URL);
+const connection = mongoose.connect('mongodb://heroku_kxlgbn5c:71lut2aoai91n3pdhnmvb54usl@ds141474.mlab.com:41474/heroku_kxlgbn5c');
 const app = require('./app');
 const path = require('path');
 
-app.use('/', express.static(path.join(__dirname, 'public')));
+app.use('/', express.static(path.join(__dirname, 'build_final')));
 
 mongoose.connection.once('open', function() {
   console.log('connected');
 
-  var server = app.listen(3001, function(){
+  var server = app.listen(process.env.PORT || 3001, function(){
     var host = server.address().address;
     var port = server.address().port;
     console.log('listening on',host, port);
@@ -54,8 +54,4 @@ app.get('/send',function(req,res){
       res.end("sent");
        }
   });
-});
-
-app.listen(8000,function(){
-    console.log("Express Started on Port 8000");
 });
