@@ -8,7 +8,7 @@ const connection = mongoose.connect('mongodb://heroku_kxlgbn5c:71lut2aoai91n3pdh
 const app = require('./app');
 const path = require('path');
 
-app.use('/', express.static(path.join(__dirname, 'public')));
+app.use('/', express.static(path.join(__dirname, 'build_final')));
 
 mongoose.connection.once('open', function() {
   console.log('connected');

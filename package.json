@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
+    // "start": "react-scripts start",
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
@@ -16,6 +17,7 @@
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",
+    "concurrently": "^3.5.0",
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "fast-csv": "^2.4.0",
