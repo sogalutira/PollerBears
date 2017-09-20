@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    // "start": "react-scripts start",
     "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -45,5 +44,4 @@
     "redux-thunk": "^2.2.0",
     "timekit-booking": "^1.19.0"
   },
-  "proxy": "http://localhost:3001"
 }
