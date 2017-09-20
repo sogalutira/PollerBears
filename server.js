@@ -5,7 +5,7 @@ const nodemailer = require("nodemailer");
 const CONFIG = require('./config.json'); 
 const mailConfig = require('./env.json');
 const fs = require('fs');
-const connection = mongoose.connect('mongodb://heroku_kxlgbn5c:71lut2aoai91n3pdhnmvb54usl@ds141474.mlab.com:41474/heroku_kxlgbn5c');
+const connection = mongoose.connect(CONFIG.MONGO_URL);
 const app = require('./app');
 const path = require('path');
 
